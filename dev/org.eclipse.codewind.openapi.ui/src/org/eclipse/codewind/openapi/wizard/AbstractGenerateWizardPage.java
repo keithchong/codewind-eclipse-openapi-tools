@@ -212,15 +212,10 @@ public abstract class AbstractGenerateWizardPage extends WizardPage {
 			}
 		}		
 		if (project != null) {
-			isCodewindProject = Util.isCodewindProject(project);			
+			isCodewindProject = Util.isCodewindProject(project);
 			if (isCodewindProject) {
 				if (codewindProjectLanguage.length() == 0) {
 					codewindProjectLanguage = Util.getProjectLanguage(project);
-				}
-				if ("swift".equals(codewindProjectLanguage)) {
-					outputFolder.setText(project.getFullPath().toString() + "/Sources");
-				} else {
-					outputFolder.setText(project.getFullPath().toString());					
 				}
 				if (codewindProjectLanguage.length() > 0) {
 					switch(codewindProjectLanguage) {
@@ -261,6 +256,11 @@ public abstract class AbstractGenerateWizardPage extends WizardPage {
 				}
 			} else {
 				fillLanguagesCombo(); // Regular project in the workspace
+			}
+			if ("swift".equals(codewindProjectLanguage) || "Swift".equals(codewindProjectLanguage)) {
+				outputFolder.setText(project.getFullPath().toString() + "/Sources");
+			} else {
+				outputFolder.setText(project.getFullPath().toString());					
 			}
 		}
 	}

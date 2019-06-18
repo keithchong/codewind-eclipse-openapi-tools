@@ -209,7 +209,6 @@ public abstract class AbstractGenerateWizardPage extends WizardPage {
 					}
 				}
 				projectText.setText(project.getName());
-				outputFolder.setText(project.getFullPath().toString());				
 			}
 		}		
 		if (project != null) {
@@ -217,6 +216,11 @@ public abstract class AbstractGenerateWizardPage extends WizardPage {
 			if (isCodewindProject) {
 				if (codewindProjectLanguage.length() == 0) {
 					codewindProjectLanguage = Util.getProjectLanguage(project);
+				}
+				if ("swift".equals(codewindProjectLanguage)) {
+					outputFolder.setText(project.getFullPath().toString() + "/Sources");
+				} else {
+					outputFolder.setText(project.getFullPath().toString());					
 				}
 				if (codewindProjectLanguage.length() > 0) {
 					switch(codewindProjectLanguage) {
@@ -354,6 +358,11 @@ public abstract class AbstractGenerateWizardPage extends WizardPage {
 		ed.setAllowMultiple(false);
 		ed.setMessage(Messages.BROWSE_DIALOG_MESSAGE_SELECT_FOLDER);
 		ed.setTitle(Messages.BROWSE_DIALOG_TITLE_SELECT_FOLDER);
+		String out = outputFolder.getText();
+		if (out.startsWith(project.getFullPath().toString())) {
+			String s = outputFolder.getText().substring(project.getFullPath().toString().length());
+			ed.setInitialSelection(project.findMember(s));
+		}		
 		ed.addFilter(new ViewerFilter() {			
 			@Override
 			public boolean select(Viewer arg0, Object arg1, Object resource) {

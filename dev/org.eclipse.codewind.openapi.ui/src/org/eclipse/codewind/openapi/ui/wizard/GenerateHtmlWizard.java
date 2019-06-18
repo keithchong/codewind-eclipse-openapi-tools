@@ -10,7 +10,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.eclipse.codewind.openapi.wizard;
+package org.eclipse.codewind.openapi.ui.wizard;
 
 import org.eclipse.codewind.openapi.core.Activator;
 import org.eclipse.codewind.openapi.ui.Constants;

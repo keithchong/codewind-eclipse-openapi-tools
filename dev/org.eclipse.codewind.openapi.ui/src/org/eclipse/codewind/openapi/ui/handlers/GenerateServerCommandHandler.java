@@ -12,8 +12,8 @@
  *******************************************************************************/
 package org.eclipse.codewind.openapi.ui.handlers;
 
-import org.eclipse.codewind.openapi.wizard.GenerateServerWizard;
-import org.eclipse.codewind.openapi.wizard.GenerateServerWizardPage;
+import org.eclipse.codewind.openapi.ui.wizard.GenerateServerWizard;
+import org.eclipse.codewind.openapi.ui.wizard.GenerateServerWizardPage;
 import org.eclipse.core.commands.ExecutionEvent;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.jface.viewers.ISelection;

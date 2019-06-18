@@ -10,7 +10,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.eclipse.codewind.openapi.ui;
+package org.eclipse.codewind.openapi.ui.util;
 
 import org.eclipse.codewind.openapi.core.util.Util;
 import org.eclipse.core.expressions.PropertyTester;

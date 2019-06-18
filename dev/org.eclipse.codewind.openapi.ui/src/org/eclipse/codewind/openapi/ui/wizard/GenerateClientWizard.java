@@ -10,22 +10,22 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.eclipse.codewind.openapi.wizard;
+package org.eclipse.codewind.openapi.ui.wizard;
 
 import org.eclipse.codewind.openapi.ui.commands.AbstractOpenApiGeneratorCommand;
-import org.eclipse.codewind.openapi.ui.commands.GenerateServerCommand;
+import org.eclipse.codewind.openapi.ui.commands.GenerateClientCommand;
 import org.eclipse.core.resources.IProject;
 
-public class GenerateServerWizard extends AbstractGenerateWizard {
+public class GenerateClientWizard extends AbstractGenerateWizard {
 
-	public GenerateServerWizard() {
+	public GenerateClientWizard() {
 		super();
 		setNeedsProgressMonitor(true);
 	}
-
+	
 	@Override
 	protected AbstractOpenApiGeneratorCommand getCommand() {
-		GenerateServerCommand cmd = new GenerateServerCommand();
+		GenerateClientCommand cmd = new GenerateClientCommand();
 		IProject project = page.getProject();
 		cmd.setProject(project);
 		cmd.setGeneratorType(page.getGeneratorType());

@@ -12,8 +12,10 @@
  *******************************************************************************/
 package org.eclipse.codewind.openapi.ui;
 
+import org.eclipse.codewind.openapi.ui.util.UILogger;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.resource.ImageDescriptor;
+import org.eclipse.osgi.service.debug.DebugOptionsListener;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
 
@@ -38,6 +40,7 @@ public class Activator extends AbstractUIPlugin {
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
+		context.registerService(DebugOptionsListener.class, UILogger.instance(), null);
 	}
 
 	@Override

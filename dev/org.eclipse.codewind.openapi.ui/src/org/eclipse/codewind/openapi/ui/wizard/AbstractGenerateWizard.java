@@ -10,7 +10,7 @@
  * Contributors:
  *     IBM Corporation - initial API and implementation
  *******************************************************************************/
-package org.eclipse.codewind.openapi.wizard;
+package org.eclipse.codewind.openapi.ui.wizard;
 
 import java.lang.reflect.InvocationTargetException;
 

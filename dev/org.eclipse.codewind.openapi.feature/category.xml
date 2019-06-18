@@ -3,5 +3,5 @@
    <feature url="features/org.eclipse.codewind.openapi.feature_1.0.0.qualifier.jar" id="org.eclipse.codewind.openapi.feature" version="1.0.0.qualifier">
       <category name="org.eclipse.codewind.openapi.category"/>
    </feature>
-   <category-def name="org.eclipse.codewind.openapi.category" label="OpenAPI Tools for Eclipse and Codewind"/>
+   <category-def name="org.eclipse.codewind.openapi.category" label="OpenAPI Tools"/>
 </site>

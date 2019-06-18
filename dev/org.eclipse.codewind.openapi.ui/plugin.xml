@@ -11,7 +11,7 @@
     	</propertyTester>
        	<propertyTester
       		id="org.eclipse.codewind.openapi.ui.OpenApiToolsPropertyTesterCodewinApp"
-      		type="org.eclipse.codewind.core.internal.CodewindEclipseApplication"
+      		type="org.eclipse.codewind.core.internal.CodewindApplication"
       		namespace="org.eclipse.codewind.openapi.ui"
       		properties="isImported"
       		class="org.eclipse.codewind.openapi.ui.OpenApiToolsPropertyTester">
@@ -57,7 +57,7 @@
 			    	<count value="1"/>
 			    	<or>
 			        	<iterate>
-			            	<adapt type="org.eclipse.codewind.core.internal.CodewindEclipseApplication">
+			            	<adapt type="org.eclipse.codewind.core.internal.CodewindApplication">
 			            		<test forcePluginActivation="true" property="org.eclipse.codewind.openapi.ui.isImported" value="true"/>
 			            	</adapt>
 			        	</iterate>
@@ -78,7 +78,7 @@
 			    	<count value="1"/>
 			    	<or>
 			        	<iterate>
-			            	<adapt type="org.eclipse.codewind.core.internal.CodewindEclipseApplication">
+			            	<adapt type="org.eclipse.codewind.core.internal.CodewindApplication">
 			            		<test forcePluginActivation="true" property="org.eclipse.codewind.openapi.ui.isImported" value="true"/>
 			            	</adapt>
 			        	</iterate>
@@ -99,7 +99,7 @@
 			    	<count value="1"/>
 			    	<or>
 			        	<iterate>
-			            	<adapt type="org.eclipse.codewind.core.internal.CodewindEclipseApplication">
+			            	<adapt type="org.eclipse.codewind.core.internal.CodewindApplication">
 			            		<test forcePluginActivation="true" property="org.eclipse.codewind.openapi.ui.isImported" value="true"/>
 			            	</adapt>
 			        	</iterate>
@@ -153,7 +153,7 @@
                		<count value="1"/>
                   	  <iterate>
                      	<adapt
-                           type="org.eclipse.codewind.core.internal.CodewindEclipseApplication">
+                           type="org.eclipse.codewind.core.internal.CodewindApplication">
                      	</adapt>
                   	  </iterate>
                		</with>
@@ -169,7 +169,7 @@
                   <count value="1"/>
                   <iterate>
                      <adapt
-                           type="org.eclipse.codewind.core.internal.CodewindEclipseApplication">
+                           type="org.eclipse.codewind.core.internal.CodewindApplication">
                      </adapt>
                   </iterate>
                </with>
@@ -185,7 +185,7 @@
                   <count value="1"/>
                   <iterate>
                      <adapt
-                           type="org.eclipse.codewind.core.internal.CodewindEclipseApplication">
+                           type="org.eclipse.codewind.core.internal.CodewindApplication">
                      </adapt>
                   </iterate>
                </with>

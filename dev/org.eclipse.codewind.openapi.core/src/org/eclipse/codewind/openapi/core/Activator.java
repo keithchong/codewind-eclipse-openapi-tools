@@ -15,8 +15,11 @@ package org.eclipse.codewind.openapi.core;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 
+import org.eclipse.codewind.openapi.core.util.CoreLogger;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Plugin;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.osgi.service.debug.DebugOptionsListener;
 import org.osgi.framework.BundleContext;
 
 public class Activator extends Plugin {
@@ -33,6 +36,7 @@ public class Activator extends Plugin {
 	public void start(BundleContext bundleContext) throws Exception {
 		Activator.context = bundleContext;
 		plugin = this;
+		context.registerService(DebugOptionsListener.class, CoreLogger.instance(), null);
 	}
 
 	public void stop(BundleContext bundleContext) throws Exception {
@@ -44,14 +48,33 @@ public class Activator extends Plugin {
 	}
 	
 	public static void log(int severity, String message) {
-		plugin.getLog().log(new Status(severity, PLUGIN_ID, message));
+		switch (severity) {
+			case IStatus.INFO:
+				if (CoreLogger.INFO) {
+					plugin.getLog().log(new Status(severity, PLUGIN_ID, message));
+				}
+				break;
+			case IStatus.ERROR:
+				if (CoreLogger.ERROR) {
+					plugin.getLog().log(new Status(severity, PLUGIN_ID, message));					
+				}
+				break;
+			case IStatus.WARNING:
+				if (CoreLogger.WARNING) {
+					plugin.getLog().log(new Status(severity, PLUGIN_ID, message));					
+				}
+				break;
+			default:
+		}
 	}
 	
 	public static void log(int severity, Exception e) {
-		StringWriter writer = new StringWriter();
-		PrintWriter pw = new PrintWriter(writer);
-		e.printStackTrace(pw);
-		plugin.getLog().log(new Status(severity, PLUGIN_ID, writer.toString()));
+		if (CoreLogger.ERROR) {
+			StringWriter writer = new StringWriter();
+			PrintWriter pw = new PrintWriter(writer);
+			e.printStackTrace(pw);
+			plugin.getLog().log(new Status(severity, PLUGIN_ID, writer.toString()));				
+		}
 	}
 
 }

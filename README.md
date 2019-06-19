@@ -13,7 +13,7 @@ The Codewind OpenAPI Tools for Eclipse provides wizards that invoke the OpenAPI 
 2. If Codewind is installed, the context menu generator actions are available in the Codewind Explorer view
 3. Ensure at least one OpenAPI Specification is in the project
 4. Select an action to generate the client or server stubs or HTML documentation
-5. Fill in information that is displayed from the wizard   
+5. Fill in the requested information that is displayed in the wizard   
 6. After generation, edit .openapi-generator-ignore to ensure subsequent code generation does not overwrite custom code
 
 ## Features

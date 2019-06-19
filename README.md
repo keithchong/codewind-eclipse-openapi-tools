@@ -1,5 +1,4 @@
-# codewind-eclipse-openapi-tools
-Codewind OpenAPI Tools for Eclipse
+# Codewind OpenAPI Tools for Eclipse
 
 The Codewind OpenAPI Tools for Eclipse provides wizards that invoke the OpenAPI Generator to create API clients, server stubs, and HTML documentation from OpenAPI Specifications.  The tools have been integrated with Codewind for Eclipse but they can also work standalone with a base Eclipse IDE for Java EE Developers installation.
 

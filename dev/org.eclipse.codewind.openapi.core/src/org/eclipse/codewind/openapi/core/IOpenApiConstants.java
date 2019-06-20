@@ -14,7 +14,7 @@ package org.eclipse.codewind.openapi.core;
 
 public interface IOpenApiConstants {
 	
-	public static final String OPENAPI_CLI_OVERRIDE_PROPERTY = "org.ecliipse.codewind.openapi.cli.jar.path"; //$NON-NLS-1$
+	public static final String OPENAPI_CLI_OVERRIDE_PROPERTY = "org.eclipse.codewind.openapi.cli.jar.path"; //$NON-NLS-1$
 	public static final String CODEGEN_JAR_401 = "openapi-generator-cli-4.0.1.jar";	//$NON-NLS-1$
 
 }
